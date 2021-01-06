@@ -1,0 +1,109 @@
+extends template/layout
+block var
+  - var name_order = 'Comforsor 9 SUV 295/40R21 111T XL'
+
+  mixin order(id)
+    .profile__order__date 24.09.2018
+    .profile__order
+      .profile__order__list
+        .profile__order__item
+          .profile__order__item__image
+            +image('mg.png')
+          a.profile__order__item__name(href='catalog-item.html')= name_order
+          .profile__order__item__count 4
+          .profile__order__item__price
+            .old_price 1 448.00
+            .new_price 434.40
+            .desc 108.60 per 1
+        .profile__order__item
+          .profile__order__item__image
+            +image('im.png')
+          a.profile__order__item__name(href='catalog-item.html')= name_order
+          .profile__order__item__count 1
+          .profile__order__item__price
+            .price 108.60
+        .profile__order__item
+          .profile__order__item__check
+            .form__control
+              +checkbox('fit balance and dispostal', id, 'fit-balance' )
+          .profile__order__item__count 1
+          .profile__order__item__price
+            .price 20
+      .profile__order__total
+        .profile__order__total_row
+          .profile__order__total_name 2 items, 19 lb
+          .profile__order__total_discount Discount
+
+        .profile__order__total_price
+          .price 1 576.6
+          .discount 1 013.6
+        .profile__order__total_row
+          .profile__order__total_total total
+        .profile__order__total_price
+          .total_price 563
+
+
+block content
+  .profile
+    +breadcrumbs([], 'profile')
+    .container
+      .index__title profile
+      .profile__user-data
+        .profile__avatar
+        .profile__info
+          .profile__info__row
+            .profile__info__title name
+            .profile__info__text Alex
+          .profile__info__row
+            .profile__info__title phone number
+            .profile__info__text +61 2 (6) 295-90-33
+            .form__button.form__button--big free call
+
+          .profile__info__row
+            .profile__info__title email
+            .profile__info__text= email
+      ul.profile__tabs
+        .profile__tab.active(data-tab='edit') edit profile
+        .profile__tab(data-tab='orders') my orders
+        a.profile__tab.link(href='cart.html') my shopping-cart
+      form.profile__cont.active#edit
+        .profile__title personal information
+
+        .row
+          .profile__cont__row
+            .form__control
+              input(type='text', placeholder="User name", name='name')
+            .form__control
+              input(type='text', placeholder="Email", name='email')
+          .profile__cont__row
+            .form__control
+              .eye
+              input(type='password', placeholder="Password", name='pass')
+            .form__control
+              .eye
+              input(type='password', placeholder="New password", name='new-pass')
+        .profile__title delivery information
+        .row
+          .profile__cont__row
+            .form__control
+              input(type='text', placeholder="First Name", name='first-name')
+            .form__control
+              input(type='text', placeholder="Last Name", name='last-name')
+            .form__control
+              input(type='text', placeholder="Phone number", name='phone')
+          .profile__cont__row
+            .form__control
+              input(type='text', placeholder="Address", name='address')
+            .form__control
+              input(type='text', placeholder="Suburb", name="suburb")
+            .form__control
+              input(type='text', placeholder="State/Region/Province", name="state")
+            .form__control
+              input(type='text', placeholder="Zip/Postal code", name="zip")
+        button.form__button save changes
+      .profile__cont#orders
+        .profile__title my orders
+        +order('fit1')
+        +order('fit2')
+
+

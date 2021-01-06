@@ -1,0 +1,258 @@
+include example-code
+include variable
+include variable-layout
+
+mixin modal(id)
+  .overlay(id= id)
+    .modal
+      .modal_close
+      .modal_form
+        p.form_title Обратная связь
+        form
+          .form_control
+            input(type="text", placeholder="Ваше имя" name="fio", data-req="true")
+            .form_error Поле обязательно для заполнения
+          .form_control
+            input(type="text", placeholder="Ваш телефон", name="phone", data-req="true")
+
+          +input('ta')
+
+          .form_control
+            button.btn(type="submit") отправить
+        .form_info Нажимая на кнопку, вы даете согласие на обработку
+          | персональных данных и соглашаетесь с <a href="">политикой конфиденциальности</a>
+
+mixin response()
+  .overlay#response
+    .modal
+      .modal_close
+      .modal_form
+        .modal_title
+
+mixin header(page)
+  header.header
+    .container
+      .row
+        a.header__logo(href='index.html')
+        .header__right-panel
+          .header__top-panel
+            .open open 7 days
+            a.email(href='mailto:test@test.com')= email
+            a.phone(href='tel:88007000000')
+              span= phone
+              span.bold= phone_bold
+            a.facebook(href='#')
+            .user(data-link='sign-in')
+            +cart()
+          .header__bottom-panel
+            +menu(menuHeader, page)
+            .search
+              .search--button
+            form.search__form
+              input.search__form__input(type='text', name='search', autocomplete='off')
+              button.search__form__button(type='submit')
+            .button--togle-menu
+              i.line
+              i.line
+              i.line
+
+mixin mobile_header(page)
+  header.header--mobile
+    a.header--mobile__logo(href='index.html')
+    a.cart(href='cart.html')
+      .cart__count 20
+    .button--togle-menu
+      i.line
+      i.line
+      i.line
+
+mixin menu(menu, page)
+  ul.header__menu
+    each i in menu
+      li.header__menu-item(class={'active': page == i.name}, class={'select': i.submenu})
+        if (i.submenu)
+          span= i.name
+          ul.header__sub-menu
+            each val in i.submenu
+              li.header__sub-menu-item
+                if (i.name == 'tyres' || i.name == 'wheels' || i.name == 'packages' || i.name == 'service')
+                  a(href='catalog.html')= val
+                else
+                  a(href= val +'.html')= val
+        else
+          a(href= i.url)= i.name
+
+mixin footer
+  footer.footer
+    .container
+      .row.row--flex
+        .first_row
+          .footer__title quick links
+          a.footer__link(href="#") Shipping information
+          a.footer__link(href="#") Warranty and Refund policy
+          a.footer__link(href="#") Terms and conditions
+          a.footer__link(href="#") Disclaimer
+          a.footer__link.help(href="#") guaranteed fitment first time
+        .second_row
+          .footer__title payment method
+          .footer__text.visa visa
+          .footer__text.master-card master card
+          .footer__text bank transfer
+          .footer__text eftpos
+        .last_row
+          a.footer__link(href="#") become an ityres supplier
+          a.footer__link(href="#") career
+          a.footer__link(href="#") become a fitting partner
+      .footer__copy &copy;2018, &laquo;ITYRES&raquo;
+
+mixin cart()
+  .cart
+    .cart__count 20
+    .cart__content
+      .cart__content__title added to cart
+      ul.cart__content__list
+        li.cart__content__item
+          .item__name Fuel A101 8.5x19/5x112 ET28 D66.6 BKF
+          .item__quantity 4
+          .item__price &#36;415.85
+        li.cart__content__item
+          .item__name Moto Metal A101 8.5x19/5x112 ET28 D66.6 BKF
+          .item__quantity 16
+          .item__price &#36;6 615.85
+      .cart__content__total total
+      .item__quantity 20
+      .item__price &#36;7 031.70
+      a.gotoCart(href='cart.html') go to cart
+
+mixin menuDevice(menu)
+  .menu-device
+    .menu-device__close
+    .menu-device__wrapper
+      .menu-device__top
+        .open open 7 days
+        a.phone(href='tel:88007000000')
+          span= phone
+          span.bold= phone_bold
+        a.email(href='mailto:test@test.com')= email
+        a.facebook(href='#')
+        .user(data-link='sign-in')
+      form.menu-device__search
+        input(type='text', name='search')
+        button.button--search(type='submit')
+      ul.menu-device__list
+        each i in menu
+          li.menu-device__item
+            if (i.submenu)
+              .menu-device__item__title= i.name
+              ul.menu-device__sub-menu
+                each val in i.submenu
+                  li.menu-device__sub-menu__item
+                    a(href='#')= val
+            else
+              .menu-device__item__title: a(href= i.url)= i.name
+
+mixin breadcrumbs(mas, name, title)
+  .breadcrumbs(class={'breadcrumbs--big': title})
+    .container
+      if title
+        .row
+          .breadcrumbs__cont
+            h1.breadcrumbs__title= title
+            ul.breadcrumbs__list
+              li.breadcrumbs__item: a(href="index.html") main page
+              each name, url in mas
+                li.breadcrumbs__item: a(href= url + ".html")= name
+              li.breadcrumbs__item: span= name
+          .breadcrumbs__form
+            +b_form()
+      else
+        ul.breadcrumbs__list
+          li.breadcrumbs__item: a(href="index.html") main page
+          each name, url in mas
+            li.breadcrumbs__item: a(href= url + ".html")= name
+          li.breadcrumbs__item: span= name
+
+mixin modalWindows()
+  .modal__overlay#sign-in
+    .modal__window
+      .close
+      .wrapper
+        .modal__title sign in
+        .modal__description registering to website, you accept our <b>Terms of Use</b> and our <b>Privacy Policy.</b>
+        .modal__social
+          .modal__social__title with your social network
+          .row
+            .modal__social__row
+              .modal__social__in.google
+            .modal__social__row
+              .modal__social__in.facebook
+            .modal__social__row
+              .modal__social__in.twitter
+        form.modal__form
+          .form__control
+            input(type='text', placeholder="User name or email", name='login')
+          .form__control
+            .eye
+            input(type='password', placeholder="Password")
+          .form__control
+            input(type='checkbox', id='keep-me', name='keep-me')
+            label(for='keep-me') Keep me signed in
+          button(type='submit').form__button.form__button--big sign in
+        .modal__footer
+          .modal__link(data-link='sign-up') Not a member? Sign up
+          .modal__link(data-link='reset') Recover my password
+
+
+  .modal__overlay#sign-up
+    .modal__window
+      .close
+      .wrapper
+        .modal__title sign up
+        .modal__description registering to website, you accept our <b>Terms of Use</b> and our <b>Privacy Policy.</b>
+        .modal__social
+          .modal__social__title with your social network
+          .row
+            .modal__social__row
+              .modal__social__in.google
+            .modal__social__row
+              .modal__social__in.facebook
+            .modal__social__row
+              .modal__social__in.twitter
+        form.modal__form
+          .form__control
+            input(type='text', placeholder="User name", name='user-name')
+          .form__control
+            input(type='text', placeholder="Email", name='email')
+          .form__control.form__control--password
+            input(type='password', placeholder="Password", name='password')
+          .form__control
+            input(type='checkbox', id='receive-news', name='receive-news')
+            label(for='receive-news') I wish to receive newsletters, promotions and news from iTyres Company.
+          button(type='submit').form__button.form__button--big sign up
+        .modal__footer
+          .modal__link(data-link='sign-in') Already registered? Sign in
+  .modal__overlay#reset
+    .modal__window
+      .close
+      .wrapper
+        .modal__title.modal__title--with-margin reset password
+        .modal__description Enter your username or email to reset your password. You will receive an email with instructions on how to reset your password. If you are experiencing problems resetting your password <b>contact us</b> or <b>send us an email</b>
+        form.modal__form
+          .form__control
+            input(type='text', placeholder="User name or email", name='login')
+          button(type='submit').form__button.form__button--big reset password
+        .modal__footer
+          .modal__link(data-link='sign-in') Sign in
+          .modal__link(data-link='sign-up') Not a member? Sign up
+
+mixin number()
+  .number
+    .number__minus
+    input(type='number', min='1', value='1')
+    .number__plus
+
+mixin input_with_error(label, name, error)
+  .form__control.form__control--with-error(class= {'error' :error}, class= {'date' : name === 'date'})
+    label= label
+    input(type='text', autocomplete='off', name= name, data-req="req" class= {'datePicker' : name === 'date'})
+    .error This is a required field

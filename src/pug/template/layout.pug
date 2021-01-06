@@ -1,0 +1,44 @@
+doctype
+include variable
+include variable-layout
+include mixins_layout
+include mixins_index
+html(lang="ru")
+    head
+        title iTyres
+
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0")
+        link(rel="styleSheet", media="all", type="text/css", href="css/jquery.fancybox.css")
+        link(rel="styleSheet", media="all", type="text/css", href="css/jquery-ui.css")
+        link(rel="styleSheet", media="all", type="text/css", href="css/style.min.css")
+
+
+    body
+      block var
+      +modalWindows()
+      +menuDevice(menuDevice)
+      +header(page)
+      +mobile_header(page)
+
+      main.content
+        block content
+
+      +footer()
+
+
+      script( src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAkpsFR3S2EGGF2vtQiGgxFIXtAEkjDZ7M")
+      script(src="js/jquery.js")
+      if (without)
+        script(src="js/jquery-ui.min.js")
+        script(src="js/without-paralax.js")
+      else
+        script(src="js/jquery.scroolly.js")
+        script(src="js/paralax.js")
+      script(src="js/nouislider.min.js")
+      script(src="js/owl.carousel-min.js")
+      script(src="js/jquery.fancybox.js")
+
+
+      script(src="js/main.js")
+

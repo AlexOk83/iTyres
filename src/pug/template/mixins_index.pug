@@ -1,0 +1,145 @@
+mixin brands__cont(list)
+  each item in list
+    .index__brands__item
+      img(src= 'images/' + item)
+      .eye
+        a.eye__wheels(href="#") Wheels
+        a.eye__site(href="#") Site
+
+mixin index_gallery_slider()
+  .index__gallery__item
+    .index__gallery__first-slide.video
+      +image-wrap-fancy('LC2.png', 'https://youtu.be/bHZ2lKKxT4s')
+    .container
+      .row
+        .index__gallery__second-slide
+          +image-wrap-fancy('isuzu3.png')
+        .index__gallery__last-slide
+          +image-wrap-fancy('LC4.png')
+          +image-wrap-fancy('LC1.png')
+
+mixin search()
+  .index__search
+    .container
+      .index__search__item
+        .index__search__content
+          .accordeon
+            .index__search__title.tyres.accordeon__select shop for tyres only
+            .accordeon__body
+              form
+                +select('tyres1', 'please select width', tyres_list)
+                +select('tyres2', 'please select width', tyres_list)
+                +select('tyres3', 'please select width', tyres_list)
+                button.index__search__button search
+      .index__search__item
+        .index__search__content
+          .accordeon
+            .index__search__title.wheels.accordeon__select shop for wheels only
+            .accordeon__body
+              form
+                +select('wheels1', 'please select width', tyres_list)
+                +select('wheels2', 'please select width', tyres_list)
+                +select('wheels3', 'please select width', tyres_list)
+                button.index__search__button search
+      .index__search__item
+        .index__search__content
+          .accordeon
+            .index__search__title.package.accordeon__select wheel and tyre packages
+            .accordeon__body
+              form
+                +select('packages1', 'please select width', tyres_list)
+                +select('packages2', 'please select width', tyres_list)
+                +select('packages3', 'please select width', tyres_list)
+                button.index__search__button search
+
+mixin ourBrands()
+  .container
+    .index__title our <br> brands
+    ul.index__brands__tabs
+      .index__brands__tab.active(data-tab='all') all brands
+      .index__brands__tab(data-tab='wheels-1') automotive <br> wheels
+      .index__brands__tab(data-tab='wheels-2') powersports <br> wheels
+      .index__brands__tab(data-tab='wheels-3') heavy truck <br> wheels
+  .index__brands
+    .container
+      .index__brands__cont.active#all
+        +brands__cont(all)
+      .index__brands__cont#wheels-1
+        +brands__cont(w1)
+      .index__brands__cont#wheels-2
+        +brands__cont(w2)
+      .index__brands__cont#wheels-3
+        +brands__cont(w3)
+
+mixin gallery()
+  .container.gallery
+    .index__title Gallery
+    .index__paralax__title Gallery
+  .index__gallery.index__gallery__desktop
+    +index_gallery_slider()
+    +index_gallery_slider()
+    +index_gallery_slider()
+  .container
+    .index__gallery.index__gallery__mobile
+      .index__gallery__mobile__item
+        +image-wrap-fancy('123.jpg')
+      .index__gallery__mobile__item
+        +image-wrap-fancy('85627.jpg')
+      .index__gallery__mobile__item
+        +image-wrap-fancy('LC2.png')
+      .index__gallery__mobile__item
+        +image-wrap-fancy('LC4.png')
+      .index__gallery__mobile__item
+        +image-wrap-fancy('LC5.png')
+
+
+
+mixin ourReviews()
+  .container
+    .index__reviews
+      .index__reviews__title
+        .index__title our <br> rev<i>i</i>ews
+        .index__reviews__button see all
+      .index__reviews__item
+        .index__reviews__photo
+          +image-wrap('man1.png')
+          .index__reviews__number 01
+        .index__reviews__date 12.08.2018
+        .index__reviews__name Alex
+        .index__reviews__text= banner_text
+      .index__reviews__item
+        .index__reviews__photo
+          +image-wrap('man3.png')
+          .index__reviews__number 02
+        .index__reviews__date 12.08.2018
+        .index__reviews__name Daniel
+        .index__reviews__text= banner_text
+
+mixin story()
+  .index__story
+    .container
+      .index__story__people
+      .index__story__content
+        .index__story__logo
+        .index__story__title story
+        .index__story__text iTyres is a family owned business based in South East Queensland, designed to provide the best service and deals on wheels and tyres to the 4WD community across Australia.
+        .index__story__button know more
+mixin bisSale()
+  .index__sale
+    .index__paralax__title(data-stellar-ratio="2") Big sale
+    .container
+      .index__title b<i>i</i>g sale
+      .index__sale__slider
+        .index__sale__slider_item
+          .index__sale__slider_logo
+          .index__sale__slider_wrapper
+            +image('photo4.png')
+        .index__sale__slider_item
+          .index__sale__slider_logo
+          .index__sale__slider_wrapper
+            +image('photo4.png')
+        .index__sale__slider_item
+          .index__sale__slider_logo
+          .index__sale__slider_wrapper
+            +image('photo4.png')
+      .index__sale__text As a broker with extensive experience in logistics and with very little overheads, therefore allowing us to offer super competitive pricing on a massive range of the 4WD, SUV, Commercial along with passenger wheels and tyres to all corners of Australia.

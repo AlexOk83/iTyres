@@ -1,0 +1,75 @@
+#map {
+  width: 50vw;
+  min-height: 50vw;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+}
+.contacts {
+  position: relative;
+  min-height: 50vw;
+  &__content {
+    .left_desktop(7);
+    .left_tablet(6);
+    .column(4,6);
+    .column_padding();
+    padding-top: 3px;
+    padding-bottom: 75px;
+    .media_tablet({
+      padding-left: 40px;
+      padding-right: 40px;
+    })
+  }
+  &__title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 29px;
+    margin-bottom: 33px;
+    margin-top: 72px;
+    color: @blueTitle;
+  }
+  &__item {
+    margin-bottom: 12px;
+    padding-left: 45px;
+    position: relative;
+    font-size: 20px;
+    line-height: 24px;
+    color: @blueTitle;
+    b {
+      font-weight: bold;
+      font-size: inherit;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+    }
+    &.marker {
+      &:before {
+        .bg(@marker_contacts);
+      }
+    }
+    &.phone {
+      &:before {
+        .bg(@phone_contacts);
+      }
+    }
+    &.email {
+      &:before {
+        .bg(@email_contacts);
+      }
+    }
+    &.skype {
+      &:before {
+        .bg(@skype_contacts);
+      }
+    }
+  }
+}

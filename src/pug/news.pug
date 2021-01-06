@@ -1,0 +1,28 @@
+extends template/layout
+block var
+  mixin news_item(item)
+    li.news__item
+      .news__item__image
+        +image(item.image)
+      .news__item__content
+        .news__item__content__date= item.date
+        .news__item__content__title= item.title
+        .news__item__content__description= item.description
+        a.button__more(href='news-item.html') more
+        .news__item__content__shadow
+
+block content
+  .news
+    +breadcrumbs([], 'news')
+    .container
+      .index__title news
+      +pagination()
+      .index__paralax__title News
+      ul.news__list
+        each item in newsList
+          +news_item(item)
+      +pagination()
+
+
+
+

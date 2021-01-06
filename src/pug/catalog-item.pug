@@ -1,0 +1,92 @@
+extends template/layout
+block var
+  mixin catalog_slider()
+    .catalog-full__slider
+      .catalog-full__slider__big-photo
+      .catalog-full__slider__gallery
+        .item: img(src='images/1.png', data-photo='Image-18.png')
+        .item: img(src='images/2.png', data-photo='2.png')
+        .item: img(src='images/3.png', data-photo='3.png')
+        .item: img(src='images/4.png', data-photo='4.png')
+        .item: img(src='images/5.png', data-photo='5.png')
+
+  mixin catalog_info(item)
+    .catalog-full__info
+      .catalog-full__name= item.name
+      .catalog-full__desc= item.desc
+      .catalog-full__price
+        if (item.oldPrice)
+          .old__price= item.oldPrice
+        if (item.newPrice)
+          .new__price= item.newPrice
+        if (item.price)
+          .price= item.price
+      .catalog-full__count
+        label Qty:
+        +number()
+      .form__button add to cart
+      .catalog-full__links
+        p
+          a(href='#').link.link-delivery Delivery info
+          a(href='#').link.link-prices Lowest Prices
+        p
+          a(href='#').link.link-install Installation info
+          a(href='#').link.link-help In-House Experts
+
+
+
+block content
+  .catalog-full
+    +breadcrumbs({'catalog':'wheels'}, 'fuel')
+    .catalog-full__bg
+      .container
+        .index__paralax__title Fuel
+        .row
+          +catalog_slider()
+          +catalog_info(catalog_item)
+
+        ul.catalog-full__tabs
+          .catalog-full__tab.active(data-tab='descriptions') descriptions
+          .catalog-full__tab(data-tab='specific') technical <br> specification
+    .container
+      .catalog-full__cont.active#descriptions
+        h2.catalog-full__title descriptions
+        p As a broker with extensive experience in logistics and with very little
+          | overheads, therefore allowing us to offer super competitive pricing on a
+          | massive range of the 4WD, SUV, Commercial along with passenger wheels and
+          | tyres to all corners of Australia.
+        p The fact that the spokes extend all the way up to the lip means that you
+          | get maximum concavity, aggressive staggered fitments and a large caliper
+          | clearance – all the things you need when looking at upgrading your road beast.
+
+        p As a broker with extensive experience in logistics and with very little
+          | overheads, therefore allowing us to offer super competitive pricing on a
+          | massive range of the 4WD, SUV, Commercial along with passenger wheels and
+          | tyres to all corners of Australia.
+        p The fact that the spokes extend all the way up to the lip means that you
+          | get maximum concavity, aggressive staggered fitments and a large caliper
+          | clearance – all the things you need when looking at upgrading your road beast.
+      .catalog-full__cont#specific
+        h2.catalog-full__title technical specification
+        p As a broker with extensive experience in logistics and with very little
+          | overheads, therefore allowing us to offer super competitive pricing on a
+          | massive range of the 4WD, SUV, Commercial along with passenger wheels and
+          | tyres to all corners of Australia.
+        p The fact that the spokes extend all the way up to the lip means that you
+          | get maximum concavity, aggressive staggered fitments and a large caliper
+          | clearance – all the things you need when looking at upgrading your road beast.
+
+        p As a broker with extensive experience in logistics and with very little
+          | overheads, therefore allowing us to offer super competitive pricing on a
+          | massive range of the 4WD, SUV, Commercial along with passenger wheels and
+          | tyres to all corners of Australia.
+        p The fact that the spokes extend all the way up to the lip means that you
+          | get maximum concavity, aggressive staggered fitments and a large caliper
+          | clearance – all the things you need when looking at upgrading your road beast.
+
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+extends template/layout
+block var
+  - var tyres_list = ['14', '16']
+  - var width = ['14', '15', '16']
+  mixin b_form()
+    .accordeon
+      .breadcrumbs__form__title.wheels.accordeon__select shop for wheels
+      .accordeon__body
+        form
+          +select('wheels1', 'select vehicle make', tyres_list)
+          +select('wheels2', 'select model', tyres_list)
+          +select('wheels3', 'select size', tyres_list)
+          button.form__button(type='submit') search
+
+  mixin sort_select(label, list)
+    label= label
+    .sort__select
+      select
+        each item, key in list
+          option(value= key)= item
+
+  mixin sort_panel()
+    .catalog__sorter__device
+      .close
+      .catalog__filter__title sort by
+      .filter__wrapper
+        .form__control
+          .sort_btn.sort__asc price
+        .form__control
+          .sort_btn size
+        .form__control
+          .sort_btn popularity
+    .catalog__sorter__wrapper
+      .catalog__sorter-panel
+        +sort_select('show', ['9 items', '12 items', '15 items', '24 items'])
+        +sort_select('sort by', ['price', 'name', 'size'])
+      +pagination()
+
+  mixin slider(iid, min=300, max=1000, cl='')
+    .slider(data-id= iid, class= cl, data-min= min, data-max= max)
+      .slider__range(id= 'slider-' + iid)
+        .slider__min
+        .slider__max
+      .slider__value
+        input(type="text", value= min, id= 'first-' + iid)
+        input(type="text", value= max, id= 'last-' + iid)
+
+  mixin catalog_item(item)
+    .catalog__item__wrapper
+      a.catalog__item(class= item.modify, href='catalog-item.html')
+        if (item.sale)
+          .sale__value= item.sale
+        .catalog__item__image
+          +image(item.image)
+        .catalog__item__name= item.name
+        .catalog__item__desc= item.desc
+        .catalog__item__price
+          if (item.oldPrice)
+            .old__price= item.oldPrice
+          if (item.price)
+            .price= item.price
+          if (item.newPrice)
+            .new__price= item.newPrice
+        .form__button details
+block content
+  .catalog
+    +breadcrumbs([], 'wheels', 'all wheels')
+    .catalog__panel-device
+      .catalog__btn-open#filter-open filter
+      .catalog__btn-open#sort-open sort by
+    .container
+      .row
+        .catalog__filter
+          .close
+          .catalog__filter__title filter
+          form.filter__wrapper
+            .filter__accordeon.active
+              .filter__accordeon__title wheel brand
+              .filter__accordeon__body
+                +checkbox('American Racing', 'f1')
+                +checkbox('Helo', 'f2')
+                +checkbox('Moto Metal', 'f3')
+                +checkbox('KMC', 'f4')
+                +checkbox('XD', 'f5')
+                +checkbox('Fuel', 'f6')
+                +checkbox('Hussla', 'f7')
+                +checkbox('Diesel', 'f8')
+            .filter__accordeon.active
+              .filter__accordeon__title price
+              .filter__accordeon__body
+                +slider('price', 300, 2000, 'dollars')
+            .filter__accordeon
+              .filter__accordeon__title wheel size
+              .filter__accordeon__body
+                +slider('size', 100, 150, 'rub')
+            .filter__accordeon
+              .filter__accordeon__title wheel width
+              .filter__accordeon__body
+                +select('wheel-width', 'wheel width', width)
+            .filter__accordeon
+              .filter__accordeon__title wheel finish
+              .filter__accordeon__body
+                +slider('finish')
+
+
+            button.form__button filtered
+        .catalog__list
+          +sort_panel()
+          .line
+          .row
+            each item in catalogList
+              +catalog_item(item)
+          .line
+          +pagination()
+
+
+
+
+
+
+

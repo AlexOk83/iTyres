@@ -1,0 +1,130 @@
+extends template/layout
+block var
+  - var name_order = 'Comforsor 9 SUV 295/40R21 111T XL'
+  - without = true
+  mixin edit()
+    .cart-page__item__edit
+      .button__edit edit
+      .button__delete delete
+  mixin cart_order_list()
+    .cart-page__item
+      .cart-page__item__image
+        +image('mg.png')
+      a.cart-page__item__name(href='catalog-item.html')= name_order
+      .cart-page__item__count
+        +number()
+      .cart-page__item__price
+        .old_price 1 448.00
+        .new_price 434.40
+        .desc 108.60 per 1
+      +edit()
+    .cart-page__item
+      .cart-page__item__image
+        +image('im.png')
+      a.cart-page__item__name(href='catalog-item.html')= name_order
+      .cart-page__item__count
+        +number()
+      .cart-page__item__price
+        .price 108.60
+      +edit()
+    .cart-page__item
+      .cart-page__item__check
+        .form__control
+          +checkbox('fit balance and dispostal', 'fit', 'fit-balance' )
+      .cart-page__item__count
+        +number()
+      .cart-page__item__price
+        .price 20
+      .cart-page__item__edit
+
+  mixin select_city()
+    .select__city
+      select
+        option(value='sydney') sydney, Australia
+        option(value='new-york') New-York, USA
+        option(value='Moskow') Moskow, Russia
+        option(value='Kiev') Kiev, Ukraine
+block content
+  .cart-page
+    +breadcrumbs([], 'cart')
+    .container
+      .index__title cart
+      .row
+        .cart-page__row
+          .cart-page__list
+            +cart_order_list()
+            .cart-page__total
+              .cart-page__total_row
+                .cart-page__total_name 2 items, 19 lb
+                .cart-page__total_discount Discount
+
+              .cart-page__total_price
+                .price 1 576.6
+                .discount 1 013.6
+              .cart-page__total_row
+                .cart-page__total_total total
+              .cart-page__total_price
+                .total_price 563
+            form.cart-page__coupons
+              input(type='text', placeholder='coupone code' name='code')
+              button apply
+
+
+        .cart-page__row
+          .cart-page__list
+            .cart-page__title shipping information
+            .cart-page__sub_title recipient
+            .row
+              +input_with_error('First Name','first-name', 1)
+              +input_with_error('Last Name','last-name', 1)
+              +input_with_error('Email','email' , 1)
+              +input_with_error('Phone','phone', 1)
+            .form__control
+              +checkbox('receive', 'receive', 'I want to receive personalized offers and discounts by e-mail')
+            .cart-page__sub_title choose your city
+              +select_city()
+            .cart-page__pay
+              .cart-page__pay__item
+                input(type='radio', id='courier', name= 'delivery')
+                label(for='courier').courier courier
+                  span.price 20
+                  span.date tomottow
+              .cart-page__pay__item
+                input(type='radio', id='pickup', name= 'delivery')
+                label(for='pickup').pickup pickup
+                  span.price 10
+                  span.date 28.09.2018
+            +input_with_error('Address','address')
+            .row
+              +input_with_error('Suburb','suburb')
+              +input_with_error('Zip/Postal Code','zip')
+              +input_with_error('Date','date')
+            .cart-page__pay
+              .cart-page__pay__item
+                input(type='radio', id='cash', name= 'pay')
+                label(for='cash').cash cash on hand
+              .cart-page__pay__item
+                input(type='radio', id='cart', name= 'pay')
+                label(for='cart').cart by card online
+            .cart-page__footer
+              .cart-page__footer__row
+                .cart-page__footer__line
+                  .cart-page__footer__title Order
+                  .cart-page__footer__text
+                    .price 563
+                .cart-page__footer__line
+                  .cart-page__footer__title Delivery
+                  .cart-page__footer__text not chosen
+                .cart-page__footer__line.total
+                  .cart-page__footer__title total
+                  .cart-page__footer__text
+                    .price 563
+              .cart-page__footer__row
+                button.form__button confirm
+
+
+
+
+
+
+

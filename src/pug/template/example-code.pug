@@ -1,0 +1,200 @@
+mixin list(mas)
+  each item in mas
+    li= item
+
+mixin list_link(mas)
+  each item, key in mas
+    li: a(href= key + ".html")= item
+
+mixin list_ancor(mas)
+  each item, key in mas
+    li: a.ankor(href= key)= item
+
+mixin menu-list(list, page)
+  each name, url in list
+    if (page == url)
+      li.active: a(href= url + ".html")= name
+    else
+      li: a(href= url + ".html")= name
+
+mixin menu-list-adaptive(list, page)
+  each item in list
+    - var s = ''
+    if (page == item.url)
+      - var res = s + 'active'
+    if (item.menu == 'desktop')
+      - var res = s + 'hide_tablet'
+    if (item.menu !== 'none')
+      li(class= res): a(href= item.url + ".html")= item.name
+
+mixin menu-list-other(list, page)
+  each item in list
+    - var s = ''
+    - var res = ''
+    if (page == item.url)
+      - var res = s + 'active'
+      s = 'active'
+    if (item.menu == 'desktop')
+      - var res = s + 'hide_desktop'
+    if (item.menu !== 'tablet')
+      li(class= res): a(href= item.url + ".html")= item.name
+
+mixin menu-icon-list(list, page)
+  each item in list
+    li(class={'active': page == item.url})
+      a(href= item.url + ".html")
+        i.icon(class= "icon-" + item.icon)
+        span= item.name
+        if (item.count)
+          span.count= item.count
+
+mixin menu-icon-list2(list, list2, page)
+  each item in list
+    li(class={'active': page == item.url})
+      a(href= item.url + ".html")
+        i.icon(class= "icon-" + item.icon)
+        span= item.name
+        if (item.count)
+          span.count= item.count
+      if (item.url == 'catalog')
+        ul.sub-menu
+          +catalog_menu(list2)
+
+mixin soc($class)
+  div(class="news__" + $class + "--comment")
+    i.
+    = "51"
+  div(class="news__" + $class + "--view")
+    i
+    = "225"
+
+mixin news_right()
+  .news__header--right
+    .news__header--date 24 января 2018
+    +soc("header")
+
+mixin other_news(text)
+  a(href="#").news__block
+    .img_wrap: img(src="images/news_mini4.jpg")
+    .news__block--date 24 января 2018
+    .news__block--title= text
+    +soc("block")
+
+mixin other_news_big(mas)
+  a(href="news.html").sections__item
+    .sections__item_img
+      .img_wrap
+        img(src="images/" + mas.img)
+    .sections__item--cont
+      .sections__item--date= mas.date
+      .sections__item--title= mas.title
+      .sections__item--text= mas.text
+      .news__block
+        +soc("block")
+
+mixin pagination()
+  .pagination
+    li.icon.icon-arrow-left
+    li.pagination__item.active 1
+    li.pagination__item: a(href="#") 2
+    li.pagination__item: a(href="#") 3
+    li.icon.icon-arrow-right
+
+mixin image-wrap(image, alt)
+  .img_wrap: img(src="images/" + image, alt="" + alt)
+
+
+mixin image-wrap-fancy(image, url, alt)
+  if (url)
+    a(href= url, data-fancybox="images" rel="gallery").img_wrap: img(src="images/" + image, alt="" + alt, )
+  else
+    a(href="images/" + image, data-fancybox="images" rel="gallery").img_wrap: img(src="images/" + image, alt="" + alt, )
+
+mixin image(image, alt)
+  img(src="images/" + image, alt="" + alt )
+
+mixin checkbox(label, id, name)
+  .form__control
+    input(type='checkbox', id= id, name= name)
+    label(for= id)= label
+
+mixin radio(id, name, label, req)
+  input(type="radio" id= id, value= id, name= name, data-req= req)
+  label(for= id)= label
+
+mixin input(type, name, label, req)
+  .form_control
+    if (type == "ta")
+      textarea(name= name, placeholder= label, data-req= req)
+    else
+      input(type= type, name= name, placeholder= label, data-req= req, autocomplete="off")
+
+mixin inputWithLabel(type, name, label, ph, req)
+  .form_control
+    label= label
+    if (type == "ta")
+      textarea(name= name, placeholder= ph, data-req= req)
+    else
+      input(type= type, name= name, placeholder= ph, data-req= req, autocomplete="off")
+
+mixin input_line(type, name, label, req)
+  .form_control.form_control--inline
+    label= label
+    input(type= type, name= name, data-req= req)
+
+mixin input_line2(type, name, label, value, req, class_input)
+  .form_control.form_control--inline
+    label= label
+    input(type= type, name= name, placeholder= label, value= value, data-req= req, class= class_input)
+
+mixin select(name, label, list)
+  .form_select
+    select(placeholder= label, name= name)
+      option(value='')= label
+      each name in list
+        if (name == '14')
+          option(selected, value= name)= name
+        else
+          option(value= name)= name
+mixin select_mini(name, list)
+  .form_select__mini
+    select(name= name)
+      each item in list
+        option(value= item.value, data-class= item.dop_class)= item.name
+
+mixin select-icon(name, list)
+  .form_select_icon
+    select(name= name)
+      each item in list
+        option(value= item.value, data-icon= item.icon)= item.name
+
+mixin table()
+  .table
+    table
+      thead
+        tr
+          th №
+          th Первая колонка
+          th Вторая колонка
+          th Третья колонка
+      tbody
+        tr
+          td 1
+          td текст
+          td текст
+          td текст
+        tr
+          td 2
+          td текст
+          td текст
+          td текст
+        tr
+          td 3
+          td текст
+          td текст
+          td текст
+        tr
+          td 4
+          td текст
+          td текст
+          td текст

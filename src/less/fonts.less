@@ -1,0 +1,37 @@
+@font-path: '../fonts';
+
+.fontFace(@font-family, @file, @weight, @style) {
+  @font-face {
+    font-family: '@{font-family}';
+    src:  url('@{font-path}/@{file}.eot?skszf9');
+    src:  url('@{font-path}/@{file}.eot?skszf9#iefix') format('embedded-opentype'),
+    url('@{font-path}/@{file}.ttf?skszf9') format('truetype'),
+    url('@{font-path}/@{file}.woff?skszf9') format('woff');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-UltraLight', 100, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-UltraLightItalic', 100, Italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Thin', 200, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-ThinItalic', 200, Italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Light', 300, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-LightItalic', 300, Italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Regular', normal, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Italic', normal, Italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Medium', 500, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-MediumItalic', 500, Italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Demi', 600, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-DemiItalic', 600, Italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Bold', bold, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-BoldItalic', bold, italic);
+
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-Heavy', 900, normal);
+.fontFace('AvenirNextCyr', 'AvenirNextCyr-HeavyItalic', 900, italic);

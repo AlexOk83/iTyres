@@ -1,0 +1,131 @@
+@import "mixin";
+@import "var";
+
+* {
+  font: normal normal 16px/18px 'AvenirNextCyr', sans-serif ;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  .media_min_width(2500px, {
+    font-size: 24px;
+  });
+  .media_min_width(5000px, {
+    font-size: 32px;
+  });
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  &.not-active {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.scrollbars(8px, @colorText);
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+input, textarea, button {
+  outline: none;
+}
+
+.header li,
+.footer li
+{
+ list-style-type: none
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+
+i, span {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+
+b,
+strong,
+h1, h2, h3, h4, h5, h6{
+
+}
+
+
+h1 {
+  font-size: 2.28rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.71rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.36rem;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-size: 1.14rem;
+  line-height: 1.43rem;
+}
+
+h5 {
+  font-size: 0.86rem;
+  line-height: 1.43rem;
+}
+
+h6 {
+  font-size: 0.71rem;
+  line-height: 1rem;
+}
+
+.owl-stage-outer {
+  width: 100%;
+  overflow: hidden;
+  z-index: 5;
+  position: relative;
+}
+.owl-stage {
+  display: flex;
+}
+.owl-item {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+.owl-nav {
+
+}
+.owl-dots {
+  &.disabled {
+    display: none;
+  }
+
+
+}
+.owl-dot {
+  cursor: pointer;
+  &.active {
+    background-color: @redDef;
+  }
+}

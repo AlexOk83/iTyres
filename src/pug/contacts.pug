@@ -1,0 +1,37 @@
+extends template/layout
+block var
+  mixin b_form()
+    form
+      .accordeon
+        .breadcrumbs__form__title.accordeon__select still have questions?
+        .accordeon__body
+          .form__control
+            input(type='text', placeholder="your name", name='name')
+          .form__control
+            input(type='text', placeholder="your phone", name='phone')
+          .form__control
+            textarea(placeholder="your question", name='question')
+          button.form__button(type='submit') send
+
+block content
+  +breadcrumbs([], 'news', 'our contacts')
+  .contacts
+    #map
+    .container
+      .contacts__content
+        .contacts__title contacts
+        .contacts__item.phone +39 (333) <b>222 33 66</b>
+        .contacts__item.email= email
+        .contacts__item.skype= email
+
+        .contacts__title addresses
+        .contacts__item.marker 7-9 Fullerton Street, Woollahra NSW 2025
+        .contacts__item.marker 78 Canberra Avenue, Griffith, ACT 2603
+        .contacts__item.marker 78 Canberra Avenue, Griffith, ACT 2603
+
+
+
+
+
+
+

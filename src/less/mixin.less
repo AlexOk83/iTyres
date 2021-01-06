@@ -1,0 +1,451 @@
+// обрезание строки с многоточием
+.text_overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.clearfix {
+  &:after, &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// центруем элементы, высота и ширина которых не статична
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// центруем элементы, высота и ширина которых статична
+.center_static(@w, @h) {
+  top: 50%;
+  left: 50%;
+  width: @w;
+  height: @h;
+  margin-top: -(@h / 2);
+  margin-left: -(@w / 2);
+}
+
+// запрещаем у данного элемента выделять текст (у активных элементов двойным нажатием выделяется)
+.no_select {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// центруем изображение внутри контейнера, с указанием высоты контейнера в процентах от ширины
+.img_wrapper(@size: 50%) {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    width: 100%;
+    display: block;
+    padding-bottom: @size;
+  }
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    .center();
+  }
+}
+
+.img_wrapper2(@size) {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    width: 100%;
+    display: block;
+    padding-bottom: @size;
+  }
+  img {
+    width: 100%;
+    position: absolute;
+    .center();
+  }
+}
+
+.bg(@img, @size: contain, @pos: center, @repeat: no-repeat) {
+  background-image: url('@{pathImages}@{img}');
+  background-size: @size;
+  background-position: @pos;
+  background-repeat: @repeat;
+}
+
+.gradient(@ugol, @color_1, @color_2, @percent1: 0%, @percent2: 100%) {
+  background: linear-gradient(@ugol, @color_1 @percent1, @color_2 @percent2)
+}
+
+.animate(@name, @duration: 1s, @delay: 0s) {
+  animation-name: @name;
+  animation-delay: @delay;
+  animation-duration: @duration;
+  animation-fill-mode: forwards;
+}
+
+.full_button(@width, @height, @color_bg, @color_text) {
+  width: 100%;
+  max-width: @width;
+  line-height: @height;
+  background-color: @color_bg;
+  color: @color_text;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  .no_select();
+  transition: background-color 0.3s ease-out;
+  &:hover {
+    background-color: darken(@color_bg, 10);
+  }
+  &:active {
+    background-color: darken(@color_bg, 20);
+  }
+}
+.button(@p, @height, @color_bg, @color_text) {
+  padding-left: @p;
+  padding-right: @p;
+  line-height: @height;
+  background-color: @color_bg;
+  color: @color_text;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  .no_select();
+  transition: background-color 0.3s ease-out;
+  &:hover {
+    background-color: darken(@color_bg, 10);
+  }
+  &:active {
+    background-color: darken(@color_bg, 20);
+  }
+}
+.red-button {
+  .full_button(100%, 38px, @redDef, @white);
+  text-transform: uppercase;
+  border-radius: 38px / 2;
+  font-size: 12px;
+  font-weight: bold;
+}
+.red-button2 {
+  .button(44px, 49px, @redDef, @white);
+  text-transform: uppercase;
+  border: none;
+  border-radius: 49px / 2;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 4px;
+
+}
+
+.mixed_bg(@type : overlay) {
+  background-blend-mode: @type;
+}
+
+.media_max_width(@width, @rules) {
+  @media screen and (max-width: @width) {
+    @rules();
+  }
+}
+.media_min_width(@width, @rules) {
+  @media screen and (min-width: @width) {
+    @rules();
+  }
+}
+.media_max_height(@height, @rules) {
+  @media screen and (max-height: @height) {
+    @rules();
+  }
+}
+.media_min_height(@height, @rules) {
+  @media screen and (min-height: @height) {
+    @rules();
+  }
+}
+
+.media_mobile(@rules) {
+  @media screen and (max-width: @mobile_width) {
+    @rules();
+  }
+}
+.media_tablet(@rules) {
+  @media screen and (min-width: @tablet_min_width) and (max-width: @tablet_max_width) {
+    @rules();
+  }
+}
+.media_device(@rules) {
+  @media screen and (max-width: @tablet_max_width) {
+    @rules();
+  }
+}
+.media_not_mobile(@rules) {
+  @media screen and (min-width: @tablet_min_width) {
+    @rules();
+  }
+}
+.media_desktop(@rules) {
+  @media screen and (min-width: @desktop_width) {
+    @rules();
+  }
+}
+.media_extra_desktop(@rules) {
+  @media screen and (min-width: @extra_desktop_width) {
+    @rules();
+  }
+}
+
+.hide_mobile {
+  .media_mobile({
+    display: none !important;
+  });
+}
+.hide_tablet {
+  .media_tablet({
+    display: none !important;
+  });
+}
+.hide_device {
+  .media_device({
+    display: none !important;
+  });
+}
+.hide_desktop {
+  .media_desktop({
+    display: none !important;
+  });
+}
+
+.width_extra_mobile(@count_column) {
+  @media screen and (max-width: @extra_mobile_width) {
+    width: @width_column * @count_column;
+  }
+}
+.width_mobile(@count_column) {
+  @media screen and (max-width: @mobile_width) {
+    width: @width_column * @count_column;
+  }
+}
+.width_tablet(@count_column) {
+  @media screen and (min-width: @tablet_min_width) and (max-width: @tablet_max_width) {
+    width: @width_column * @count_column;
+  }
+}
+.width_device(@count_column) {
+  @media screen and (max-width: @tablet_max_width) {
+    width: @width_column * @count_column;
+  }
+}
+.width_desktop(@count_column) when (@count_column > 2) {
+  @media screen and (min-width: @desktop_width) {
+    width: @width_column * @count_column;
+  }
+}
+
+.width_desktop(@count_column) when (@count_column = 2) {
+  @media screen and (min-width: @desktop_width) {
+    width: @width_column2 * @count_column;
+  }
+}
+.width_desktop(@count_column) when (@count_column = 1) {
+  @media screen and (min-width: @desktop_width) {
+    width: @width_column * 2;
+  }
+}
+
+
+.right_mobile(@count_column) {
+  @media screen and (max-width: @mobile_width) {
+    margin-right: @width_column * @count_column;
+  }
+}
+.right_tablet(@count_column) {
+  @media screen and (min-width: @tablet_min_width) and (max-width: @tablet_max_width) {
+    margin-right: @width_column * @count_column;
+  }
+}
+.right_device(@count_column) {
+  @media screen and (max-width: @tablet_max_width) {
+    margin-right: @width_column * @count_column;
+  }
+}
+.right_desktop(@count_column) {
+  @media screen and (min-width: @desktop_width) {
+    margin-right: @width_column * @count_column;
+  }
+}
+
+.left_mobile(@count_column) {
+  @media screen and (max-width: @mobile_width) {
+    margin-left: @width_column * @count_column;
+  }
+}
+.left_tablet(@count_column) {
+  @media screen and (min-width: @tablet_min_width) and (max-width: @tablet_max_width) {
+    margin-left: @width_column * @count_column;
+  }
+}
+.left_device(@count_column) {
+  @media screen and (max-width: @tablet_max_width) {
+    margin-left: @width_column * @count_column;
+  }
+}
+.left_desktop(@count_column) {
+  @media screen and (min-width: @desktop_width) {
+    margin-left: @width_column * @count_column;
+  }
+}
+
+.scrollbars(@size, @foreground-color, @background-color: mix(@foreground-color, white,  50%)) {
+  ::-webkit-scrollbar{
+    width:  @size;
+    height: @size;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: @foreground-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: @background-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+
+          // For Internet Explorer
+  body {
+    scrollbar-face-color: @foreground-color;
+    scrollbar-track-color: @background-color;
+  }
+
+
+}
+  // For Google Chrome
+
+.column(@count_desktop: 12, @count_tablet: 12, @count_mobile: 12, @count_extra_mobile: 12) {
+  display: block;
+  float: left;
+  .clearfix();
+  width: 100%;
+  .width_desktop(@count_desktop);
+  .width_tablet(@count_tablet);
+  .width_mobile(@count_mobile);
+  .width_extra_mobile(@count_extra_mobile);
+}
+.column_padding(@p: @padding) {
+  padding-left: @p;
+  padding-right: @p;
+  .media_mobile({
+    padding-left: @p / 2;
+    padding-right: @p / 2;
+  })
+}
+
+
+
+.shadow(@pos: relative){
+  position: @pos;
+  li {
+    z-index: 3;
+    position: relative;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 2%;
+    width: 96%;
+    height: 90%;
+    box-shadow: 0 5px 15px rgba(@blackDef, 0.2);
+  }
+}
+
+.box-shadow(@x: 0, @y: 5px, @size: 15px, @opacy: 0.2) {
+  box-shadow: @x @y @size rgba(@blackDef, @opacy);
+}
+
+.image_render() {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  -ms-interpolation-mode: nearest-neighbor;  /* IE */
+  image-rendering: crisp-edges; /* Стандартное свойство */
+}
+
+.tabs(@w: 25%, @mobile_w: 50%) {
+  width: @w;
+  .media_mobile({
+    width: @mobile_w;
+    border-top: 1px solid @white;
+    border-bottom: 1px solid @white;
+  });
+  .media_max_width(320px, {
+    width: 100%;
+  });
+  border-right: 1px solid @white;
+  border-left: 1px solid @white;
+  background-color: @blueDef;
+  .bg('mask.png', cover);
+  height: 71px;
+  cursor: pointer;
+  display: flex;
+  color: @white;
+  align-items: center;
+  padding: 0 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  &.active {
+    background-color: @redDef;
+  }
+}
+
+.close_btn(@top: 20px, @right: 17px, @size: 3px) {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top:  @top;
+  right: @right;
+  cursor: pointer;
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -17px;
+    margin-top: -2px;
+    content: '';
+    width: 34px;
+    height: @size;
+    background-color: @closeBg;
+    border-radius: 5px;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    &:before,
+    &:after {
+      background-color: @white;
+    }
+  }
+}

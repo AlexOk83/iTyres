@@ -1,0 +1,486 @@
+.number {
+  height: 30px;
+  width: 120px;
+  min-width: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  &__minus,
+  &__plus {
+    background-color: @placeholder;
+    width: 30px;
+    position: relative;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    &:hover {
+      background-color: darken(@placeholder, 10);
+    }
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+  &__plus {
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 11px;
+      height: 3px;
+      background-color: @white;
+      top: 15px - 1.5px;
+      left: 9px;
+    }
+    &:after {
+      transform: rotate(-90deg);
+    }
+  }
+  &__minus {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 11px;
+      height: 3px;
+      background-color: @white;
+      top: 15px - 1.5px;
+      left: 9px;
+    }
+  }
+  input {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    color: @colorText;
+
+  }
+}
+.cart-page {
+  background-color: #fafafa;
+  min-height: 50vw;
+  padding-bottom: 160px;
+  &__row {
+    .column(6);
+    .column_padding();
+    margin-bottom: 30px;
+    .row {
+      .form__control {
+        .column(6,6,12);
+        .column_padding();
+        .media_mobile({
+          padding-left: 0;
+          padding-right: 0;
+        })
+      }
+    }
+  }
+  &__list {
+    background-color: @white;
+    padding: 21px;
+    border: @border_order;
+  }
+  &__item {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 22px;
+    border-bottom: @border_order;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    .media_mobile({
+    flex-wrap: wrap;
+    });
+    &__image {
+      width: 64px;
+      min-width: 64px;
+      img {
+        display: block;
+        max-height: 56px;
+        max-width: 56px;
+        margin: 0 auto;
+      }
+    }
+    &__name {
+      color: @colorText;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-size: 12px;
+      width: calc(~'43% - 64px');
+      min-width: calc(~'43% - 64px');
+      padding-left: 10px;
+      .media_mobile({
+        width: calc(~'100% - 64px');
+      });
+    }
+    &__check {
+      width: 43%;
+      min-width: 43%;
+      .media_mobile({
+        width: 100%;
+      });
+      .form__control {
+        padding-bottom: 0;
+      }
+      .form__control [type=checkbox]+label{
+        text-transform: uppercase;
+
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        margin-bottom: 0;
+        color: @blueTitle;
+        font-weight: bold;
+        font-size: 16px;
+        &:before {
+          border-radius: 0;
+          top: 10px;
+        }
+        &:after {
+          top: 10px;
+        }
+      }
+    }
+    &__count {
+      .media_mobile({
+        width: 100%;
+        padding: 15px 0;
+      })
+    }
+    &__price {
+      width: 100% / 3;
+      padding-left: 15px;
+      .media_mobile({
+        width: calc(~'100% - 100px');
+      });
+      .old_price {
+        color: @colorText;
+        display: inline-block;
+        position: relative;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        .money();
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 105%;
+          height: 1px;
+          border-bottom: 1px solid @redDef;
+          top: 7px;
+          left: 0;
+        }
+      }
+      .new_price {
+        color: @redDef;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+        .money();
+      }
+      .desc {
+        color: @colorText;
+        font-size: 10px;
+        line-height: 17px;
+        .money();
+      }
+      .price {
+        color: @blueTitle;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+
+        .money();
+      }
+    }
+    &__edit {
+      .button {
+        &__edit {
+          line-height: 16px;
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: 6px;
+          cursor: pointer;
+          color: @blueTitle;
+          padding-left: 16px;
+          position: relative;
+
+          &:before {
+            content: '';
+            width: 10px;
+            height: 16px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            .bg('icons/edit-cart.svg')
+          }
+        }
+        &__delete {
+          line-height: 16px;
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: 6px;
+          cursor: pointer;
+          color: @blueTitle;
+          padding-left: 16px;
+          position: relative;
+
+          &:before {
+            content: '';
+            width: 10px;
+            height: 16px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            .bg('icons/delete-cart.svg', auto 12px);
+
+          }
+        }
+      }
+    }
+  }
+  &__total {
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 26px;
+    .clearfix();
+    &_row {
+      .column(8,8,7,7);
+      margin-bottom: 5px;
+    }
+    &_name {
+      color: @colorText;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &_discount {
+      font-size: 12px;
+      color: @colorText;
+      line-height: 20px;
+    }
+    &_total {
+      color: @colorText;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 26px;
+    }
+    &_price {
+      .column(4,4,5,5);
+      padding-left: 12px;
+      margin-bottom: 5px;
+      .price {
+        .money();
+        color: @blueTitle;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 24px;
+      }
+      .discount {
+        .money();
+        color: @redDef;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px;
+      }
+      .total_price {
+        .money();
+        line-height: 26px;
+        color: @blueTitle;
+        font-size: 22px;
+        font-weight: bold;
+
+      }
+    }
+  }
+  &__coupons {
+    display: flex;
+    width: 100%;
+    input {
+      border: 1px solid @border_color;
+      height: 34px;
+      padding-left: 11px;
+      text-transform: uppercase;
+      color: @colorText;
+      max-width: 144px;
+      font-size: 10px;
+      width: calc(~'100% - 97px');
+    }
+    button {
+      height: 34px;
+      border: 0;
+      line-height: 34px;
+      cursor: pointer;
+      background-color: #1C2547;
+      color: @white;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      width: 97px;
+      text-align: center;
+      transition: all 0.3s ease-out;
+      &:hover {
+        background-color: lighten(#1C2547, 10);
+      }
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    color: @blueTitle;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 26px;
+    margin-bottom: 9px;
+  }
+  &__sub_title {
+    text-transform: uppercase;
+    color: @blueTitle;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__pay {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    &__item {
+      .column(6,6);
+      input {
+        display: none;
+        &+label {
+          display: block;
+          width: 100%;
+          height: 66px;
+          text-transform: uppercase;
+          color: @blueTitle;
+          font-weight: bold;
+          line-height: 66px;
+          font-size: 16px;
+          padding-left: 69px;
+          border: 1px solid #c2c2c2;
+          position: relative;
+          &:before {
+            content: '';
+            width: 66px;
+            height: 66px;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .price {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            display: block;
+            min-width: 86px;
+            line-height: 23px;
+            font-size: 14px;
+            color: @colorText;
+          }
+          .date {
+            position: absolute;
+            text-transform: none;
+            font-weight: normal;
+            display: block;
+            bottom: 10px;
+            font-size: 14px;
+            color: @colorText;
+            right: 0;
+            min-width: 86px;
+            line-height: 23px;
+          }
+          &.courier {
+            &:before {
+              .bg(@pay2, 34px);
+            }
+          }
+          &.pickup {
+            &:before {
+              .bg(@pay1, 34px);
+            }
+          }
+          &.cash {
+            &:before {
+              .bg(@pay4, 34px);
+            }
+          }
+          &.cart {
+            &:before {
+              .bg(@pay3, 34px);
+            }
+          }
+
+        }
+        &:checked+label {
+          border: 2px solid @redDef;
+          background-color: #FFF5F6;
+        }
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    &__row {
+      .column(6, 6);
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+    &__title {
+      width: 50%;
+      color: @colorText;
+      font-size: 16px;
+    }
+    &__text {
+      width: 50%;
+      font-weight: bold;
+      font-size: 16px;
+      color: @colorText;
+      .price {
+        font-weight: inherit;
+        font-size: inherit;
+      }
+    }
+    &__line {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      line-height: 22px;
+      &.total {
+        line-height: 26px;
+        margin-top: 18px;
+        .cart-page__footer__title {
+          color: @blueTitle;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .cart-page__footer__text {
+          color: @blueTitle;
+          font-weight: bold;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>iTyres</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="styleSheet" media="all" type="text/css" href="css/jquery.fancybox.css">
+    <link rel="styleSheet" media="all" type="text/css" href="css/jquery-ui.css">
+    <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="modal__overlay" id="sign-in">
+      <div class="modal__window">
+        <div class="close"></div>
+        <div class="wrapper">
+          <div class="modal__title">sign in</div>
+          <div class="modal__description">registering to website, you accept our <b>Terms of Use</b> and our <b>Privacy Policy.</b></div>
+          <div class="modal__social">
+            <div class="modal__social__title">with your social network</div>
+            <div class="row">
+              <div class="modal__social__row">
+                <div class="modal__social__in google"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in facebook"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in twitter"></div>
+              </div>
+            </div>
+          </div>
+          <form class="modal__form">
+            <div class="form__control">
+              <input type="text" placeholder="User name or email" name="login">
+            </div>
+            <div class="form__control">
+              <div class="eye"></div>
+              <input type="password" placeholder="Password">
+            </div>
+            <div class="form__control">
+              <input type="checkbox" id="keep-me" name="keep-me">
+              <label for="keep-me">Keep me signed in</label>
+            </div>
+            <button class="form__button form__button--big" type="submit">sign in</button>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__link" data-link="sign-up">Not a member? Sign up</div>
+            <div class="modal__link" data-link="reset">Recover my password</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__overlay" id="sign-up">
+      <div class="modal__window">
+        <div class="close"></div>
+        <div class="wrapper">
+          <div class="modal__title">sign up</div>
+          <div class="modal__description">registering to website, you accept our <b>Terms of Use</b> and our <b>Privacy Policy.</b></div>
+          <div class="modal__social">
+            <div class="modal__social__title">with your social network</div>
+            <div class="row">
+              <div class="modal__social__row">
+                <div class="modal__social__in google"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in facebook"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in twitter"></div>
+              </div>
+            </div>
+          </div>
+          <form class="modal__form">
+            <div class="form__control">
+              <input type="text" placeholder="User name" name="user-name">
+            </div>
+            <div class="form__control">
+              <input type="text" placeholder="Email" name="email">
+            </div>
+            <div class="form__control form__control--password">
+              <input type="password" placeholder="Password" name="password">
+            </div>
+            <div class="form__control">
+              <input type="checkbox" id="receive-news" name="receive-news">
+              <label for="receive-news">I wish to receive newsletters, promotions and news from iTyres Company.</label>
+            </div>
+            <button class="form__button form__button--big" type="submit">sign up</button>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__link" data-link="sign-in">Already registered? Sign in</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__overlay" id="reset">
+      <div class="modal__window">
+        <div class="close"></div>
+        <div class="wrapper">
+          <div class="modal__title modal__title--with-margin">reset password</div>
+          <div class="modal__description">Enter your username or email to reset your password. You will receive an email with instructions on how to reset your password. If you are experiencing problems resetting your password <b>contact us</b> or <b>send us an email</b></div>
+          <form class="modal__form">
+            <div class="form__control">
+              <input type="text" placeholder="User name or email" name="login">
+            </div>
+            <button class="form__button form__button--big" type="submit">reset password</button>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__link" data-link="sign-in">Sign in</div>
+            <div class="modal__link" data-link="sign-up">Not a member? Sign up</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-device">
+      <div class="menu-device__close"></div>
+      <div class="menu-device__wrapper">
+        <div class="menu-device__top">
+          <div class="open">open 7 days</div><a class="phone" href="tel:88007000000"><span>+39 (333)</span><span class="bold">222 33 66</span></a><a class="email" href="mailto:test@test.com">example@gmail.com</a><a class="facebook" href="#"></a>
+          <div class="user" data-link="sign-in"></div>
+        </div>
+        <form class="menu-device__search">
+          <input type="text" name="search">
+          <button class="button--search" type="submit"></button>
+        </form>
+        <ul class="menu-device__list">
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">tyres</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">kumno</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">toyo</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">nitto</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">atturo</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">monstra</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">comforsor</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">black bear</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">bf.goodrich</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">wheels</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">American</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Racing</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Helo</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Moto</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Metal</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">KMC</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">XD</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Fuel</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Hussla</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Diesel</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">packages</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">16inch</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">17inch</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">18inch</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">20inch</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">service</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">delivery</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">shipping</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">fit balance and disposal</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title"><a href="catalog.html">gallery</a></div>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title"><a href="profile.html">in-house-experts</a></div>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">blog</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">news</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">events</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title"><a href="contacts.html">contacts</a></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <div class="row"><a class="header__logo" href="index.html"></a>
+          <div class="header__right-panel">
+            <div class="header__top-panel">
+              <div class="open">open 7 days</div><a class="email" href="mailto:test@test.com">example@gmail.com</a><a class="phone" href="tel:88007000000"><span>+39 (333)</span><span class="bold">222 33 66</span></a><a class="facebook" href="#"></a>
+              <div class="user" data-link="sign-in"></div>
+              <div class="cart">
+                <div class="cart__count">20</div>
+                <div class="cart__content">
+                  <div class="cart__content__title">added to cart</div>
+                  <ul class="cart__content__list">
+                    <li class="cart__content__item">
+                      <div class="item__name">Fuel A101 8.5x19/5x112 ET28 D66.6 BKF</div>
+                      <div class="item__quantity">4</div>
+                      <div class="item__price">&#36;415.85</div>
+                    </li>
+                    <li class="cart__content__item">
+                      <div class="item__name">Moto Metal A101 8.5x19/5x112 ET28 D66.6 BKF</div>
+                      <div class="item__quantity">16</div>
+                      <div class="item__price">&#36;6 615.85</div>
+                    </li>
+                  </ul>
+                  <div class="cart__content__total">total</div>
+                  <div class="item__quantity">20</div>
+                  <div class="item__price">&#36;7 031.70</div><a class="gotoCart" href="cart.html">go to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__bottom-panel">
+              <ul class="header__menu">
+                <li class="header__menu-item select"><span>tyres</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">kumno</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">toyo</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">nitto</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">atturo</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">monstra</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">comforsor</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">black bear</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">bf.goodrich</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item select"><span>wheels</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">American</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Racing</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Helo</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Moto</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Metal</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">KMC</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">XD</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Fuel</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Hussla</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Diesel</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item select"><span>packages</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">16inch</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">17inch</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">18inch</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">20inch</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item select"><span>service</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">delivery</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">shipping</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">fit balance and disposal</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item"><a href="profile.html">in-house-experts</a>
+                </li>
+                <li class="header__menu-item select"><span>blog</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="news.html">news</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="events.html">events</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="FAQ.html">FAQ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item"><a href="contacts.html">contacts</a>
+                </li>
+              </ul>
+              <div class="search">
+                <div class="search--button"></div>
+              </div>
+              <form class="search__form">
+                <input class="search__form__input" type="text" name="search" autocomplete="off">
+                <button class="search__form__button" type="submit"></button>
+              </form>
+              <div class="button--togle-menu"><i class="line"></i><i class="line"></i><i class="line"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="header--mobile"><a class="header--mobile__logo" href="index.html"></a><a class="cart" href="cart.html">
+        <div class="cart__count">20</div></a>
+      <div class="button--togle-menu"><i class="line"></i><i class="line"></i><i class="line"></i></div>
+    </header>
+    <main class="content">
+      <div class="index">
+        <div class="index__banner">
+          <div class="index__banner__item" id="banner1">
+            <div class="index__banner__left"><img src="images/header-bg.png" alt="undefined">
+            </div>
+            <div class="index__banner__right"><img src="images/header-bg.png" alt="undefined">
+            </div>
+            <div class="container">
+              <h1 class="index__banner__title">
+                <p>title</p>
+                <p>new model 1</p>
+              </h1>
+              <p class="index__banner__text">Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.</p><a class="index__banner__button">more info</a>
+            </div>
+          </div>
+          <div class="index__banner__item" id="banner2">
+            <div class="index__banner__left"><img src="images/banner.png" alt="undefined">
+            </div>
+            <div class="index__banner__right"><img src="images/banner.png" alt="undefined">
+            </div>
+            <div class="container">
+              <h1 class="index__banner__title">
+                <p>title</p>
+                <p>new model 2</p>
+              </h1>
+              <p class="index__banner__text">Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.</p><a class="index__banner__button">more info</a>
+            </div>
+          </div>
+          <div class="index__banner__item" id="banner3">
+            <div class="index__banner__left"><img src="images/85627.jpg" alt="undefined">
+            </div>
+            <div class="index__banner__right"><img src="images/85627.jpg" alt="undefined">
+            </div>
+            <div class="container">
+              <h1 class="index__banner__title">
+                <p>title</p>
+                <p>new model 3</p>
+              </h1>
+              <p class="index__banner__text">Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.</p><a class="index__banner__button">more info</a>
+            </div>
+          </div>
+          <div class="index__banner__item" id="banner4">
+            <div class="index__banner__left"><img src="images/123.jpg" alt="undefined">
+            </div>
+            <div class="index__banner__right"><img src="images/123.jpg" alt="undefined">
+            </div>
+            <div class="container">
+              <h1 class="index__banner__title">
+                <p>title</p>
+                <p>new model 5</p>
+              </h1>
+              <p class="index__banner__text">Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.</p><a class="index__banner__button">more info</a>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="index__slider">
+            <div class="index__slider__item"><img src="images/isuzu4.png" data-img="banner1"></div>
+            <div class="index__slider__item"><img src="images/Isuzu1.png" data-img="banner2"></div>
+            <div class="index__slider__item"><img src="images/LC5.png" data-img="banner3"></div>
+            <div class="index__slider__item"><img src="images/Image-4.png" data-img="banner4"></div>
+          </div>
+        </div>
+        <div class="index__search">
+          <div class="container">
+            <div class="index__search__item">
+              <div class="index__search__content">
+                <div class="accordeon">
+                  <div class="index__search__title tyres accordeon__select">shop for tyres only</div>
+                  <div class="accordeon__body">
+                    <form>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="tyres1">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="tyres2">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="tyres3">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <button class="index__search__button">search</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="index__search__item">
+              <div class="index__search__content">
+                <div class="accordeon">
+                  <div class="index__search__title wheels accordeon__select">shop for wheels only</div>
+                  <div class="accordeon__body">
+                    <form>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="wheels1">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="wheels2">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="wheels3">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <button class="index__search__button">search</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="index__search__item">
+              <div class="index__search__content">
+                <div class="accordeon">
+                  <div class="index__search__title package accordeon__select">wheel and tyre packages</div>
+                  <div class="accordeon__body">
+                    <form>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="packages1">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="packages2">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <div class="form_select">
+                        <select placeholder="please select width" name="packages3">
+                          <option value="">please select width</option>
+                          <option selected value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                        </select>
+                      </div>
+                      <button class="index__search__button">search</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="index__title">our <br> brands</div>
+          <ul class="index__brands__tabs">
+            <div class="index__brands__tab active" data-tab="all">all brands</div>
+            <div class="index__brands__tab" data-tab="wheels-1">automotive <br> wheels</div>
+            <div class="index__brands__tab" data-tab="wheels-2">powersports <br> wheels</div>
+            <div class="index__brands__tab" data-tab="wheels-3">heavy truck <br> wheels</div>
+          </ul>
+        </div>
+        <div class="index__brands">
+          <div class="container">
+            <div class="index__brands__cont active" id="all">
+              <div class="index__brands__item"><img src="images/78.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/american-racing.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/diesel.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/Kumho-Tire.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/fuel.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/atturo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/hussla.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/Monsta1.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/helo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/KMC-wheels.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/kmc.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/Moto-Metal.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/bfgoodrich-logo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/Nitto-logo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/comforser.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+            </div>
+            <div class="index__brands__cont" id="wheels-1">
+              <div class="index__brands__item"><img src="images/78.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/american-racing.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/diesel.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/kmc.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+            </div>
+            <div class="index__brands__cont" id="wheels-2">
+              <div class="index__brands__item"><img src="images/hussla.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/Monsta1.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/helo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/KMC-wheels.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+            </div>
+            <div class="index__brands__cont" id="wheels-3">
+              <div class="index__brands__item"><img src="images/Moto-Metal.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/bfgoodrich-logo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/Nitto-logo.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+              <div class="index__brands__item"><img src="images/comforser.png">
+                <div class="eye"><a class="eye__wheels" href="#">Wheels</a><a class="eye__site" href="#">Site</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container gallery">
+          <div class="index__title">Gallery</div>
+          <div class="index__paralax__title">Gallery</div>
+        </div>
+        <div class="index__gallery index__gallery__desktop">
+          <div class="index__gallery__item">
+            <div class="index__gallery__first-slide video"><a class="img_wrap" href="https://youtu.be/bHZ2lKKxT4s" data-fancybox="images" rel="gallery"><img src="images/LC2.png" alt="undefined"></a>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="index__gallery__second-slide"><a class="img_wrap" href="images/isuzu3.png" data-fancybox="images" rel="gallery"><img src="images/isuzu3.png" alt="undefined"></a>
+                </div>
+                <div class="index__gallery__last-slide"><a class="img_wrap" href="images/LC4.png" data-fancybox="images" rel="gallery"><img src="images/LC4.png" alt="undefined"></a><a class="img_wrap" href="images/LC1.png" data-fancybox="images" rel="gallery"><img src="images/LC1.png" alt="undefined"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="index__gallery__item">
+            <div class="index__gallery__first-slide video"><a class="img_wrap" href="https://youtu.be/bHZ2lKKxT4s" data-fancybox="images" rel="gallery"><img src="images/LC2.png" alt="undefined"></a>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="index__gallery__second-slide"><a class="img_wrap" href="images/isuzu3.png" data-fancybox="images" rel="gallery"><img src="images/isuzu3.png" alt="undefined"></a>
+                </div>
+                <div class="index__gallery__last-slide"><a class="img_wrap" href="images/LC4.png" data-fancybox="images" rel="gallery"><img src="images/LC4.png" alt="undefined"></a><a class="img_wrap" href="images/LC1.png" data-fancybox="images" rel="gallery"><img src="images/LC1.png" alt="undefined"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="index__gallery__item">
+            <div class="index__gallery__first-slide video"><a class="img_wrap" href="https://youtu.be/bHZ2lKKxT4s" data-fancybox="images" rel="gallery"><img src="images/LC2.png" alt="undefined"></a>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="index__gallery__second-slide"><a class="img_wrap" href="images/isuzu3.png" data-fancybox="images" rel="gallery"><img src="images/isuzu3.png" alt="undefined"></a>
+                </div>
+                <div class="index__gallery__last-slide"><a class="img_wrap" href="images/LC4.png" data-fancybox="images" rel="gallery"><img src="images/LC4.png" alt="undefined"></a><a class="img_wrap" href="images/LC1.png" data-fancybox="images" rel="gallery"><img src="images/LC1.png" alt="undefined"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="index__gallery index__gallery__mobile">
+            <div class="index__gallery__mobile__item"><a class="img_wrap" href="images/123.jpg" data-fancybox="images" rel="gallery"><img src="images/123.jpg" alt="undefined"></a>
+            </div>
+            <div class="index__gallery__mobile__item"><a class="img_wrap" href="images/85627.jpg" data-fancybox="images" rel="gallery"><img src="images/85627.jpg" alt="undefined"></a>
+            </div>
+            <div class="index__gallery__mobile__item"><a class="img_wrap" href="images/LC2.png" data-fancybox="images" rel="gallery"><img src="images/LC2.png" alt="undefined"></a>
+            </div>
+            <div class="index__gallery__mobile__item"><a class="img_wrap" href="images/LC4.png" data-fancybox="images" rel="gallery"><img src="images/LC4.png" alt="undefined"></a>
+            </div>
+            <div class="index__gallery__mobile__item"><a class="img_wrap" href="images/LC5.png" data-fancybox="images" rel="gallery"><img src="images/LC5.png" alt="undefined"></a>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="index__reviews">
+            <div class="index__reviews__title">
+              <div class="index__title">our <br> rev<i>i</i>ews</div>
+              <div class="index__reviews__button">see all</div>
+            </div>
+            <div class="index__reviews__item">
+              <div class="index__reviews__photo">
+                <div class="img_wrap"><img src="images/man1.png" alt="undefined"></div>
+                <div class="index__reviews__number">01</div>
+              </div>
+              <div class="index__reviews__date">12.08.2018</div>
+              <div class="index__reviews__name">Alex</div>
+              <div class="index__reviews__text">Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.</div>
+            </div>
+            <div class="index__reviews__item">
+              <div class="index__reviews__photo">
+                <div class="img_wrap"><img src="images/man3.png" alt="undefined"></div>
+                <div class="index__reviews__number">02</div>
+              </div>
+              <div class="index__reviews__date">12.08.2018</div>
+              <div class="index__reviews__name">Daniel</div>
+              <div class="index__reviews__text">Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.</div>
+            </div>
+          </div>
+        </div>
+        <div class="index__story">
+          <div class="container">
+            <div class="index__story__people"></div>
+            <div class="index__story__content">
+              <div class="index__story__logo"></div>
+              <div class="index__story__title">story</div>
+              <div class="index__story__text">iTyres is a family owned business based in South East Queensland, designed to provide the best service and deals on wheels and tyres to the 4WD community across Australia.</div>
+              <div class="index__story__button">know more</div>
+            </div>
+          </div>
+        </div>
+        <div class="index__sale">
+          <div class="index__paralax__title" data-stellar-ratio="2">Big sale</div>
+          <div class="container">
+            <div class="index__title">b<i>i</i>g sale</div>
+            <div class="index__sale__slider">
+              <div class="index__sale__slider_item">
+                <div class="index__sale__slider_logo"></div>
+                <div class="index__sale__slider_wrapper"><img src="images/photo4.png" alt="undefined">
+                </div>
+              </div>
+              <div class="index__sale__slider_item">
+                <div class="index__sale__slider_logo"></div>
+                <div class="index__sale__slider_wrapper"><img src="images/photo4.png" alt="undefined">
+                </div>
+              </div>
+              <div class="index__sale__slider_item">
+                <div class="index__sale__slider_logo"></div>
+                <div class="index__sale__slider_wrapper"><img src="images/photo4.png" alt="undefined">
+                </div>
+              </div>
+            </div>
+            <div class="index__sale__text">As a broker with extensive experience in logistics and with very little overheads, therefore allowing us to offer super competitive pricing on a massive range of the 4WD, SUV, Commercial along with passenger wheels and tyres to all corners of Australia.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row row--flex">
+          <div class="first_row">
+            <div class="footer__title">quick links</div><a class="footer__link" href="#">Shipping information</a><a class="footer__link" href="#">Warranty and Refund policy</a><a class="footer__link" href="#">Terms and conditions</a><a class="footer__link" href="#">Disclaimer</a><a class="footer__link help" href="#">guaranteed fitment first time</a>
+          </div>
+          <div class="second_row">
+            <div class="footer__title">payment method</div>
+            <div class="footer__text visa">visa</div>
+            <div class="footer__text master-card">master card</div>
+            <div class="footer__text">bank transfer</div>
+            <div class="footer__text">eftpos</div>
+          </div>
+          <div class="last_row"><a class="footer__link" href="#">become an ityres supplier</a><a class="footer__link" href="#">career</a><a class="footer__link" href="#">become a fitting partner</a></div>
+        </div>
+        <div class="footer__copy">&copy;2018, &laquo;ITYRES&raquo;</div>
+      </div>
+    </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyAkpsFR3S2EGGF2vtQiGgxFIXtAEkjDZ7M"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.scroolly.js"></script>
+    <script src="js/paralax.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/owl.carousel-min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

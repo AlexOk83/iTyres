@@ -1,0 +1,69 @@
+extends template/layout
+block var
+  - var page = 'index'
+  - var banner_text = 'Able rent long in do we. Fat new smallness few supposing suspicion two. If in so bred at dare rose lose good. To things so denied admire.'
+  - var tyres_list = ['14', '15', '16', '17', '18', '19', '20', '21']
+
+block content
+  .index
+    .index__banner
+      .index__banner__item#banner1
+        .index__banner__left
+          +image('header-bg.png')
+        .index__banner__right
+          +image('header-bg.png')
+        .container
+          h1.index__banner__title
+            p title
+            p new model 1
+          p.index__banner__text= banner_text
+          a.index__banner__button more info
+      .index__banner__item#banner2
+        .index__banner__left
+          +image('banner.png')
+        .index__banner__right
+          +image('banner.png')
+        .container
+          h1.index__banner__title
+            p title
+            p new model 2
+          p.index__banner__text= banner_text
+          a.index__banner__button more info
+      .index__banner__item#banner3
+        .index__banner__left
+          +image('85627.jpg')
+        .index__banner__right
+          +image('85627.jpg')
+        .container
+          h1.index__banner__title
+            p title
+            p new model 3
+          p.index__banner__text= banner_text
+          a.index__banner__button more info
+      .index__banner__item#banner4
+        .index__banner__left
+          +image('123.jpg')
+        .index__banner__right
+          +image('123.jpg')
+        .container
+          h1.index__banner__title
+            p title
+            p new model 5
+          p.index__banner__text= banner_text
+          a.index__banner__button more info
+    .container
+      .index__slider
+        .index__slider__item: img(src='images/isuzu4.png',  data-img='banner1')
+        .index__slider__item: img(src='images/Isuzu1.png',  data-img='banner2')
+        .index__slider__item: img(src='images/LC5.png',     data-img='banner3')
+        .index__slider__item: img(src='images/Image-4.png', data-img='banner4')
+    +search()
+    +ourBrands()
+    +gallery()
+    +ourReviews()
+    +story()
+    +bisSale()
+
+
+
+

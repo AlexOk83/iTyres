@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>iTyres</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="styleSheet" media="all" type="text/css" href="css/jquery.fancybox.css">
+    <link rel="styleSheet" media="all" type="text/css" href="css/jquery-ui.css">
+    <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="modal__overlay" id="sign-in">
+      <div class="modal__window">
+        <div class="close"></div>
+        <div class="wrapper">
+          <div class="modal__title">sign in</div>
+          <div class="modal__description">registering to website, you accept our <b>Terms of Use</b> and our <b>Privacy Policy.</b></div>
+          <div class="modal__social">
+            <div class="modal__social__title">with your social network</div>
+            <div class="row">
+              <div class="modal__social__row">
+                <div class="modal__social__in google"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in facebook"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in twitter"></div>
+              </div>
+            </div>
+          </div>
+          <form class="modal__form">
+            <div class="form__control">
+              <input type="text" placeholder="User name or email" name="login">
+            </div>
+            <div class="form__control">
+              <div class="eye"></div>
+              <input type="password" placeholder="Password">
+            </div>
+            <div class="form__control">
+              <input type="checkbox" id="keep-me" name="keep-me">
+              <label for="keep-me">Keep me signed in</label>
+            </div>
+            <button class="form__button form__button--big" type="submit">sign in</button>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__link" data-link="sign-up">Not a member? Sign up</div>
+            <div class="modal__link" data-link="reset">Recover my password</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__overlay" id="sign-up">
+      <div class="modal__window">
+        <div class="close"></div>
+        <div class="wrapper">
+          <div class="modal__title">sign up</div>
+          <div class="modal__description">registering to website, you accept our <b>Terms of Use</b> and our <b>Privacy Policy.</b></div>
+          <div class="modal__social">
+            <div class="modal__social__title">with your social network</div>
+            <div class="row">
+              <div class="modal__social__row">
+                <div class="modal__social__in google"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in facebook"></div>
+              </div>
+              <div class="modal__social__row">
+                <div class="modal__social__in twitter"></div>
+              </div>
+            </div>
+          </div>
+          <form class="modal__form">
+            <div class="form__control">
+              <input type="text" placeholder="User name" name="user-name">
+            </div>
+            <div class="form__control">
+              <input type="text" placeholder="Email" name="email">
+            </div>
+            <div class="form__control form__control--password">
+              <input type="password" placeholder="Password" name="password">
+            </div>
+            <div class="form__control">
+              <input type="checkbox" id="receive-news" name="receive-news">
+              <label for="receive-news">I wish to receive newsletters, promotions and news from iTyres Company.</label>
+            </div>
+            <button class="form__button form__button--big" type="submit">sign up</button>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__link" data-link="sign-in">Already registered? Sign in</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__overlay" id="reset">
+      <div class="modal__window">
+        <div class="close"></div>
+        <div class="wrapper">
+          <div class="modal__title modal__title--with-margin">reset password</div>
+          <div class="modal__description">Enter your username or email to reset your password. You will receive an email with instructions on how to reset your password. If you are experiencing problems resetting your password <b>contact us</b> or <b>send us an email</b></div>
+          <form class="modal__form">
+            <div class="form__control">
+              <input type="text" placeholder="User name or email" name="login">
+            </div>
+            <button class="form__button form__button--big" type="submit">reset password</button>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__link" data-link="sign-in">Sign in</div>
+            <div class="modal__link" data-link="sign-up">Not a member? Sign up</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-device">
+      <div class="menu-device__close"></div>
+      <div class="menu-device__wrapper">
+        <div class="menu-device__top">
+          <div class="open">open 7 days</div><a class="phone" href="tel:88007000000"><span>+39 (333)</span><span class="bold">222 33 66</span></a><a class="email" href="mailto:test@test.com">example@gmail.com</a><a class="facebook" href="#"></a>
+          <div class="user" data-link="sign-in"></div>
+        </div>
+        <form class="menu-device__search">
+          <input type="text" name="search">
+          <button class="button--search" type="submit"></button>
+        </form>
+        <ul class="menu-device__list">
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">tyres</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">kumno</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">toyo</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">nitto</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">atturo</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">monstra</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">comforsor</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">black bear</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">bf.goodrich</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">wheels</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">American</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Racing</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Helo</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Moto</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Metal</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">KMC</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">XD</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Fuel</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Hussla</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">Diesel</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">packages</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">16inch</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">17inch</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">18inch</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">20inch</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">service</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">delivery</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">shipping</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">fit balance and disposal</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title"><a href="catalog.html">gallery</a></div>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title"><a href="profile.html">in-house-experts</a></div>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title">blog</div>
+            <ul class="menu-device__sub-menu">
+              <li class="menu-device__sub-menu__item"><a href="#">news</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">events</a></li>
+              <li class="menu-device__sub-menu__item"><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+          <li class="menu-device__item">
+            <div class="menu-device__item__title"><a href="contacts.html">contacts</a></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <div class="row"><a class="header__logo" href="index.html"></a>
+          <div class="header__right-panel">
+            <div class="header__top-panel">
+              <div class="open">open 7 days</div><a class="email" href="mailto:test@test.com">example@gmail.com</a><a class="phone" href="tel:88007000000"><span>+39 (333)</span><span class="bold">222 33 66</span></a><a class="facebook" href="#"></a>
+              <div class="user" data-link="sign-in"></div>
+              <div class="cart">
+                <div class="cart__count">20</div>
+                <div class="cart__content">
+                  <div class="cart__content__title">added to cart</div>
+                  <ul class="cart__content__list">
+                    <li class="cart__content__item">
+                      <div class="item__name">Fuel A101 8.5x19/5x112 ET28 D66.6 BKF</div>
+                      <div class="item__quantity">4</div>
+                      <div class="item__price">&#36;415.85</div>
+                    </li>
+                    <li class="cart__content__item">
+                      <div class="item__name">Moto Metal A101 8.5x19/5x112 ET28 D66.6 BKF</div>
+                      <div class="item__quantity">16</div>
+                      <div class="item__price">&#36;6 615.85</div>
+                    </li>
+                  </ul>
+                  <div class="cart__content__total">total</div>
+                  <div class="item__quantity">20</div>
+                  <div class="item__price">&#36;7 031.70</div><a class="gotoCart" href="cart.html">go to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__bottom-panel">
+              <ul class="header__menu">
+                <li class="header__menu-item select"><span>tyres</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">kumno</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">toyo</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">nitto</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">atturo</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">monstra</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">comforsor</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">black bear</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">bf.goodrich</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item select"><span>wheels</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">American</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Racing</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Helo</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Moto</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Metal</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">KMC</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">XD</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Fuel</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Hussla</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">Diesel</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item select"><span>packages</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">16inch</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">17inch</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">18inch</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">20inch</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item select"><span>service</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="catalog.html">delivery</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">shipping</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="catalog.html">fit balance and disposal</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item"><a href="profile.html">in-house-experts</a>
+                </li>
+                <li class="header__menu-item select"><span>blog</span>
+                  <ul class="header__sub-menu">
+                    <li class="header__sub-menu-item"><a href="news.html">news</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="events.html">events</a>
+                    </li>
+                    <li class="header__sub-menu-item"><a href="FAQ.html">FAQ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__menu-item"><a href="contacts.html">contacts</a>
+                </li>
+              </ul>
+              <div class="search">
+                <div class="search--button"></div>
+              </div>
+              <form class="search__form">
+                <input class="search__form__input" type="text" name="search" autocomplete="off">
+                <button class="search__form__button" type="submit"></button>
+              </form>
+              <div class="button--togle-menu"><i class="line"></i><i class="line"></i><i class="line"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="header--mobile"><a class="header--mobile__logo" href="index.html"></a><a class="cart" href="cart.html">
+        <div class="cart__count">20</div></a>
+      <div class="button--togle-menu"><i class="line"></i><i class="line"></i><i class="line"></i></div>
+    </header>
+    <main class="content">
+      <div class="cart-page">
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a href="index.html">main page</a></li>
+              <li class="breadcrumbs__item"><span>cart</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="index__title">cart</div>
+          <div class="row">
+            <div class="cart-page__row">
+              <div class="cart-page__list">
+                    <div class="cart-page__item">
+                      <div class="cart-page__item__image"><img src="images/mg.png" alt="undefined">
+                      </div><a class="cart-page__item__name" href="catalog-item.html">Comforsor 9 SUV 295/40R21 111T XL</a>
+                      <div class="cart-page__item__count">
+                        <div class="number">
+                          <div class="number__minus"></div>
+                          <input type="number" min="1" value="1">
+                          <div class="number__plus"></div>
+                        </div>
+                      </div>
+                      <div class="cart-page__item__price">
+                        <div class="old_price">1 448.00</div>
+                        <div class="new_price">434.40</div>
+                        <div class="desc">108.60 per 1</div>
+                      </div>
+                          <div class="cart-page__item__edit">
+                            <div class="button__edit">edit</div>
+                            <div class="button__delete">delete</div>
+                          </div>
+                    </div>
+                    <div class="cart-page__item">
+                      <div class="cart-page__item__image"><img src="images/im.png" alt="undefined">
+                      </div><a class="cart-page__item__name" href="catalog-item.html">Comforsor 9 SUV 295/40R21 111T XL</a>
+                      <div class="cart-page__item__count">
+                        <div class="number">
+                          <div class="number__minus"></div>
+                          <input type="number" min="1" value="1">
+                          <div class="number__plus"></div>
+                        </div>
+                      </div>
+                      <div class="cart-page__item__price">
+                        <div class="price">108.60</div>
+                      </div>
+                          <div class="cart-page__item__edit">
+                            <div class="button__edit">edit</div>
+                            <div class="button__delete">delete</div>
+                          </div>
+                    </div>
+                    <div class="cart-page__item">
+                      <div class="cart-page__item__check">
+                        <div class="form__control">
+                          <div class="form__control">
+                            <input type="checkbox" id="fit" name="fit-balance">
+                            <label for="fit">fit balance and dispostal</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart-page__item__count">
+                        <div class="number">
+                          <div class="number__minus"></div>
+                          <input type="number" min="1" value="1">
+                          <div class="number__plus"></div>
+                        </div>
+                      </div>
+                      <div class="cart-page__item__price">
+                        <div class="price">20</div>
+                      </div>
+                      <div class="cart-page__item__edit"></div>
+                    </div>
+                <div class="cart-page__total">
+                  <div class="cart-page__total_row">
+                    <div class="cart-page__total_name">2 items, 19 lb</div>
+                    <div class="cart-page__total_discount">Discount</div>
+                  </div>
+                  <div class="cart-page__total_price">
+                    <div class="price">1 576.6</div>
+                    <div class="discount">1 013.6</div>
+                  </div>
+                  <div class="cart-page__total_row">
+                    <div class="cart-page__total_total">total</div>
+                  </div>
+                  <div class="cart-page__total_price">
+                    <div class="total_price">563</div>
+                  </div>
+                </div>
+                <form class="cart-page__coupons">
+                  <input type="text" placeholder="coupone code" name="code">
+                  <button>apply</button>
+                </form>
+              </div>
+            </div>
+            <div class="cart-page__row">
+              <div class="cart-page__list">
+                <div class="cart-page__title">shipping information</div>
+                <div class="cart-page__sub_title">recipient</div>
+                <div class="row">
+                  <div class="form__control form__control--with-error error">
+                    <label>First Name</label>
+                    <input type="text" autocomplete="off" name="first-name" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                  <div class="form__control form__control--with-error error">
+                    <label>Last Name</label>
+                    <input type="text" autocomplete="off" name="last-name" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                  <div class="form__control form__control--with-error error">
+                    <label>Email</label>
+                    <input type="text" autocomplete="off" name="email" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                  <div class="form__control form__control--with-error error">
+                    <label>Phone</label>
+                    <input type="text" autocomplete="off" name="phone" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                </div>
+                <div class="form__control">
+                  <div class="form__control">
+                    <input type="checkbox" id="receive" name="I want to receive personalized offers and discounts by e-mail">
+                    <label for="receive">receive</label>
+                  </div>
+                </div>
+                <div class="cart-page__sub_title">choose your city
+                      <div class="select__city">
+                        <select>
+                          <option value="sydney">sydney, Australia</option>
+                          <option value="new-york">New-York, USA</option>
+                          <option value="Moskow">Moskow, Russia</option>
+                          <option value="Kiev">Kiev, Ukraine</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="cart-page__pay">
+                  <div class="cart-page__pay__item">
+                    <input type="radio" id="courier" name="delivery">
+                    <label class="courier" for="courier">courier<span class="price">20</span><span class="date">tomottow</span></label>
+                  </div>
+                  <div class="cart-page__pay__item">
+                    <input type="radio" id="pickup" name="delivery">
+                    <label class="pickup" for="pickup">pickup<span class="price">10</span><span class="date">28.09.2018</span></label>
+                  </div>
+                </div>
+                <div class="form__control form__control--with-error">
+                  <label>Address</label>
+                  <input type="text" autocomplete="off" name="address" data-req="req">
+                  <div class="error">This is a required field</div>
+                </div>
+                <div class="row">
+                  <div class="form__control form__control--with-error">
+                    <label>Suburb</label>
+                    <input type="text" autocomplete="off" name="suburb" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                  <div class="form__control form__control--with-error">
+                    <label>Zip/Postal Code</label>
+                    <input type="text" autocomplete="off" name="zip" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                  <div class="form__control form__control--with-error date">
+                    <label>Date</label>
+                    <input class="datePicker" type="text" autocomplete="off" name="date" data-req="req">
+                    <div class="error">This is a required field</div>
+                  </div>
+                </div>
+                <div class="cart-page__pay">
+                  <div class="cart-page__pay__item">
+                    <input type="radio" id="cash" name="pay">
+                    <label class="cash" for="cash">cash on hand</label>
+                  </div>
+                  <div class="cart-page__pay__item">
+                    <input type="radio" id="cart" name="pay">
+                    <label class="cart" for="cart">by card online</label>
+                  </div>
+                </div>
+                <div class="cart-page__footer">
+                  <div class="cart-page__footer__row">
+                    <div class="cart-page__footer__line">
+                      <div class="cart-page__footer__title">Order</div>
+                      <div class="cart-page__footer__text">
+                        <div class="price">563</div>
+                      </div>
+                    </div>
+                    <div class="cart-page__footer__line">
+                      <div class="cart-page__footer__title">Delivery</div>
+                      <div class="cart-page__footer__text">not chosen</div>
+                    </div>
+                    <div class="cart-page__footer__line total">
+                      <div class="cart-page__footer__title">total</div>
+                      <div class="cart-page__footer__text">
+                        <div class="price">563</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-page__footer__row">
+                    <button class="form__button">confirm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row row--flex">
+          <div class="first_row">
+            <div class="footer__title">quick links</div><a class="footer__link" href="#">Shipping information</a><a class="footer__link" href="#">Warranty and Refund policy</a><a class="footer__link" href="#">Terms and conditions</a><a class="footer__link" href="#">Disclaimer</a><a class="footer__link help" href="#">guaranteed fitment first time</a>
+          </div>
+          <div class="second_row">
+            <div class="footer__title">payment method</div>
+            <div class="footer__text visa">visa</div>
+            <div class="footer__text master-card">master card</div>
+            <div class="footer__text">bank transfer</div>
+            <div class="footer__text">eftpos</div>
+          </div>
+          <div class="last_row"><a class="footer__link" href="#">become an ityres supplier</a><a class="footer__link" href="#">career</a><a class="footer__link" href="#">become a fitting partner</a></div>
+        </div>
+        <div class="footer__copy">&copy;2018, &laquo;ITYRES&raquo;</div>
+      </div>
+    </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyAkpsFR3S2EGGF2vtQiGgxFIXtAEkjDZ7M"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/without-paralax.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/owl.carousel-min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
